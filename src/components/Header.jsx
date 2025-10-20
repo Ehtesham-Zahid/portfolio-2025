@@ -129,12 +129,6 @@ const Header = () => {
                   Projects
                 </a>
                 <a
-                  href="#blogs"
-                  className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
-                >
-                  Blogs
-                </a>
-                <a
                   href="#contact"
                   className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
                 >

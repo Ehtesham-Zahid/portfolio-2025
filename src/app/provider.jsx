@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "../providers/ThemeProvider";
+import { BrowserRouter } from "react-router";
 
 const Provider = ({ children }) => {
   return (
@@ -9,7 +10,7 @@ const Provider = ({ children }) => {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <BrowserRouter>{children}</BrowserRouter>
     </ThemeProvider>
   );
 };

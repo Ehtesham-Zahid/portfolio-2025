@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/shadcn-components/ui/button";
 import { ExternalLink, Github, Play, ArrowRight } from "lucide-react";
 import Badge from "@/features/skills/components/badge";
+import { Link } from "react-router";
 
 const projects = [
   {
@@ -167,9 +168,9 @@ const ProjectsSection = () => {
             variant="outline"
             className="h-10 px-5 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
           >
-            <span className="inline-flex items-center gap-2">
+            <Link to="/projects" className="inline-flex items-center gap-2">
               View All Projects <ExternalLink className="h-4 w-4" />
-            </span>
+            </Link>
           </Button>
         </div>
       </div>
