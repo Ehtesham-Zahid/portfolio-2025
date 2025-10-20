@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Grid, List, Search, Filter } from "lucide-react";
+import SkillCard from "./SkillCard";
 
 const ALL = "All";
 const CATEGORIES = [
@@ -30,47 +31,7 @@ const SKILLS = [
   { name: "Redis", category: "Database" },
   { name: "Postman", category: "Tools" },
   { name: "Git", category: "Tools" },
-  { name: "CI/CD", category: "Too" },
 ];
-
-const Badge = ({ children, tone = "neutral" }) => {
-  const classes =
-    tone === "accent"
-      ? "text-primary-light dark:text-primary-dark border-primary-light/40 dark:border-primary-dark/40"
-      : "text-text1-light dark:text-text1-dark border-secondary-light dark:border-secondary-dark";
-  return (
-    <span className={`text-[11px] px-2 py-0.5 rounded-full border ${classes}`}>
-      {children}
-    </span>
-  );
-};
-
-const SkillCard = ({ name, category, view }) => {
-  return (
-    <div
-      className={`rounded-xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 ${
-        view === "grid" ? "p-4" : "p-3"
-      }`}
-    >
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-lg grid place-items-center bg-secondary-light/60 dark:bg-secondary-dark/40 text-text1-light dark:text-text1-dark ring-1 ring-secondary-light/70 dark:ring-secondary-dark/60">
-            {/* Placeholder for icon (optional) */}
-            <span className="text-xs font-semibold">{name[0]}</span>
-          </div>
-          <div>
-            <div className="text-sm font-semibold text-text1-light dark:text-text1-dark">
-              {name}
-            </div>
-            <div className="mt-1">
-              <Badge>{category}</Badge>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const SkillsSection = () => {
   const [query, setQuery] = useState("");

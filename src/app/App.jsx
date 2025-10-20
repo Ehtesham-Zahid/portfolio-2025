@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import HeroSection from "@/features/home/components/HeroSection";
 import AboutSection from "@/features/about/components/AboutSection";
 import SkillsSection from "@/features/skills/components/SkillsSection";
+import ProjectsSection from "@/features/projects/components/ProjectsSection";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <ProjectsSection />
       </main>
     </div>
   );
