@@ -228,7 +228,7 @@ const ProjectCard = ({ project, view = "grid" }) => {
   );
 };
 
-const ProjectsPage = () => {
+const ProjectsPageSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
@@ -392,4 +392,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default ProjectsPageSection;
