@@ -1,8 +1,31 @@
-import React from "react";
-import { Play, ExternalLink, Clock, Share2, Youtube } from "lucide-react";
+import React, { useMemo, useState } from "react";
+import { Play } from "lucide-react";
+
+const getYouTubeEmbedUrl = (url) => {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    if (u.hostname.includes("youtu.be")) {
+      const id = u.pathname.replace("/", "");
+      return `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+    }
+    const idParam = u.searchParams.get("v");
+    if (idParam) {
+      return `https://www.youtube.com/embed/${idParam}?autoplay=1&rel=0`;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+};
 
 const DemoVideoSection = ({ project }) => {
   const videoData = project.videoData;
+  const [isPlaying, setIsPlaying] = useState(false);
+  const embedUrl = useMemo(
+    () => getYouTubeEmbedUrl(videoData.youtubeUrl),
+    [videoData.youtubeUrl]
+  );
 
   return (
     <section className="w-full bg-background dark:bg-background-dark py-16 md:py-24">
@@ -16,100 +39,60 @@ const DemoVideoSection = ({ project }) => {
             <div className="w-16 h-0.5 bg-primary-light dark:bg-primary-dark rounded-full"></div>
           </div>
 
-          {/* Video Player */}
-          <div className="group relative rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 backdrop-blur-sm shadow-2xl overflow-hidden">
-            {/* Video Header */}
-            <div className="flex items-center justify-between p-4 border-b border-secondary-light dark:border-secondary-dark bg-background/90 dark:bg-background-dark/90">
-              <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-full bg-primary-light dark:bg-primary-dark flex items-center justify-center">
-                  <span className="text-sm font-bold text-white">
-                    {videoData.author[0]}
-                  </span>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-text1-light dark:text-text1-dark">
-                    {videoData.author}
-                  </p>
-                  <p className="text-xs text-text2 dark:text-text1-dark/70">
-                    {videoData.role}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <button className="flex items-center gap-2 text-text2 dark:text-text1-dark/70 hover:text-text1-light dark:hover:text-text1-dark transition-colors">
-                  <Clock className="h-4 w-4" />
-                  <span className="text-xs">Watch later</span>
-                </button>
-                <button className="flex items-center gap-2 text-text2 dark:text-text1-dark/70 hover:text-text1-light dark:hover:text-text1-dark transition-colors">
-                  <Share2 className="h-4 w-4" />
-                  <span className="text-xs">Share</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Video Thumbnail/Player */}
-            <div className="relative aspect-video bg-gradient-to-br from-secondary-light/20 to-transparent dark:from-secondary-dark/20">
-              {videoData.thumbnail ? (
-                <img
-                  src={videoData.thumbnail}
-                  alt={videoData.title}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-2xl bg-primary-light/20 dark:bg-primary-dark/20 flex items-center justify-center">
-                      <span className="text-4xl font-bold text-primary-light dark:text-primary-dark">
-                        {videoData.title[0]}
-                      </span>
+          {/* Video Card with subtle gradient border + glass background */}
+          <div className="relative rounded-3xl p-[1px] bg-gradient-to-tr from-primary/40 via-transparent to-secondary/40 dark:from-primary-dark/40 dark:to-secondary-dark/40 shadow-xl">
+            <div className="relative rounded-3xl border border-secondary-light dark:border-secondary-dark bg-background/80 dark:bg-background-dark/70 backdrop-blur-md overflow-hidden">
+              {/* Video area */}
+              <div className="relative aspect-video">
+                {isPlaying && embedUrl ? (
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={embedUrl}
+                    title="Demo video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                ) : videoData.thumbnail ? (
+                  <img
+                    src={videoData.thumbnail}
+                    alt="Demo thumbnail"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-4 rounded-2xl bg-primary-light/20 dark:bg-primary-dark/20 flex items-center justify-center">
+                        <span className="text-4xl font-bold text-primary-light dark:text-primary-dark">
+                          ▶
+                        </span>
+                      </div>
+                      <p className="text-text2 dark:text-text1-dark/60 text-sm">
+                        Video thumbnail coming soon
+                      </p>
                     </div>
-                    <p className="text-text2 dark:text-text1-dark/60 text-sm">
-                      Video thumbnail coming soon
-                    </p>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="group/play h-20 w-20 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center shadow-2xl transition-all duration-200 hover:scale-110">
-                  <Play className="h-8 w-8 text-white ml-1 group-hover/play:scale-110 transition-transform" />
-                </button>
+                {/* Play Button Overlay */}
+                {!isPlaying && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      type="button"
+                      onClick={() => setIsPlaying(true)}
+                      className="group/play h-20 w-20 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center shadow-2xl transition-all duration-200 hover:scale-110"
+                    >
+                      <Play className="h-8 w-8 text-white ml-1 group-hover/play:scale-110 transition-transform" />
+                    </button>
+                  </div>
+                )}
               </div>
 
-              {/* Video Duration */}
-              <div className="absolute bottom-4 right-4 bg-black/80 text-white px-2 py-1 rounded text-sm font-medium">
-                {videoData.duration}
-              </div>
-
-              {/* YouTube Button */}
-              <div className="absolute bottom-4 left-4">
-                <a
-                  href={videoData.youtubeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg transition-colors duration-200"
-                >
-                  <Youtube className="h-5 w-5" />
-                  <span className="text-sm font-medium">Watch on YouTube</span>
-                </a>
+              {/* Decorative corner glows */}
+              <div className="pointer-events-none" aria-hidden>
+                <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 blur-2xl" />
+                <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-secondary-light/10 dark:bg-secondary-dark/10 blur-2xl" />
               </div>
             </div>
-
-            {/* Video Title */}
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-text1-light dark:text-text1-dark leading-tight">
-                {videoData.title}
-              </h3>
-            </div>
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-8 text-center">
-            <p className="text-text2 dark:text-text1-dark/80 max-w-2xl mx-auto">
-              Watch this comprehensive demo to see Learneazy LMS in action,
-              featuring all the key features and functionality we've built.
-            </p>
           </div>
         </div>
       </div>

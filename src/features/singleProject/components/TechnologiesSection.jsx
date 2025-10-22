@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Simple Icons CDN slugs per technology
 const slugMap = {
@@ -13,7 +13,7 @@ const slugMap = {
   "Express.js": "express",
   MongoDB: "mongodb",
   Redis: "redis",
-  JWT: "jsonwebtokens",
+  JWT: "jsonwebtoken",
   Bcrypt: "bcrypt",
   "NextAuth.js": "nextdotjs",
   VidoCipher: "vimeo",
@@ -23,6 +23,39 @@ const slugMap = {
   NodeMailer: "nodemailer",
   Recharts: "recharts",
   Vercel: "vercel",
+};
+
+const TechIcon = ({ slug, label }) => {
+  const [fallbackTried, setFallbackTried] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  if (!slug || failed) {
+    return (
+      <span className="text-xs font-semibold text-background-light dark:text-background-dark">
+        {label[0]}
+      </span>
+    );
+  }
+
+  const src = !fallbackTried
+    ? `https://cdn.simpleicons.org/${slug}`
+    : `https://cdn.jsdelivr.net/npm/simple-icons/icons/${slug}.svg`;
+
+  return (
+    <img
+      src={src}
+      alt={label}
+      className="h-4 w-4"
+      loading="lazy"
+      onError={() => {
+        if (!fallbackTried) {
+          setFallbackTried(true);
+        } else {
+          setFailed(true);
+        }
+      }}
+    />
+  );
 };
 
 const TechnologiesSection = ({ project }) => {
@@ -50,18 +83,7 @@ const TechnologiesSection = ({ project }) => {
                   className="flex items-center gap-3 px-4 py-2 rounded-full bg-secondary-light/60 dark:bg-secondary-dark/40 border border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors duration-200"
                 >
                   <div className="h-6 w-6 rounded-full bg-text1-light dark:bg-text1-dark flex items-center justify-center">
-                    {slug ? (
-                      <img
-                        src={`https://cdn.simpleicons.org/${slug}`}
-                        alt={tech}
-                        className="h-4 w-4"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <span className="text-xs font-semibold text-background-light dark:text-background-dark">
-                        {tech[0]}
-                      </span>
-                    )}
+                    <TechIcon slug={slug} label={tech} />
                   </div>
                   <span className="text-sm font-medium">{tech}</span>
                 </div>

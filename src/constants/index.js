@@ -98,15 +98,8 @@ export const projects = [
       },
     ],
     videoData: {
-      title:
-        "Learneazy LMS - Full-Stack Next.js & Express Project with VidoCipher, Stripe & More",
-      thumbnail: "", // Video thumbnail image
-      youtubeUrl: "https://youtube.com/watch?v=example",
-      duration: "15:30",
-      author: "Ehtesham Zahid",
-      role: "Software Engineer",
-      watchLaterUrl: "#",
-      shareUrl: "#",
+      thumbnail: skillstackImage, // optional thumbnail image
+      youtubeUrl: "https://youtu.be/PC2D0_RNu4k",
     },
   },
   {
@@ -171,14 +164,8 @@ export const projects = [
       },
     ],
     videoData: {
-      title: "HealthSIA - Healthcare Communication Platform Demo",
       thumbnail: "",
       youtubeUrl: "https://youtube.com/watch?v=example2",
-      duration: "12:45",
-      author: "Ehtesham Zahid",
-      role: "Software Engineer",
-      watchLaterUrl: "#",
-      shareUrl: "#",
     },
   },
   // Add more projects here...
