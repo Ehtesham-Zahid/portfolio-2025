@@ -3,6 +3,7 @@ import AboutSection from "@/features/singleProject/components/AboutSection";
 import TechnologiesSection from "@/features/singleProject/components/TechnologiesSection";
 import FeaturesSection from "@/features/singleProject/components/FeaturesSection";
 import ChallengesSolutionsSection from "../../features/singleProject/components/ChallengesSolutionsSection";
+import DemoVideoSection from "../../features/singleProject/components/DemoVideoSection";
 
 const ProjectPage = () => {
   return (
@@ -12,6 +13,7 @@ const ProjectPage = () => {
       <TechnologiesSection />
       <FeaturesSection />
       <ChallengesSolutionsSection />
+      <DemoVideoSection />
     </div>
   );
 };
