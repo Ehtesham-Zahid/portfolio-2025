@@ -1,28 +1,8 @@
 import React from "react";
 import { AlertCircle, CheckCircle } from "lucide-react";
 
-const ChallengesSolutionsSection = () => {
-  // This would typically come from props or a data source
-  const challengesAndSolutions = [
-    {
-      challenge:
-        "Preventing video piracy while maintaining streaming performance across all devices and browsers",
-      solution:
-        "Integrated VidoCipher DRM with OTP-based validation for secure, piracy-resistant video streaming",
-    },
-    {
-      challenge:
-        "Building secure payment workflows with automated enrollment and role-based access control",
-      solution:
-        "Built Stripe webhook integration with JWT authentication middleware for secure automated course enrollment",
-    },
-    {
-      challenge:
-        "Creating scalable analytics that handle real-time data synchronization between client and server",
-      solution:
-        "Implemented Redis caching with optimized database queries for real-time analytics performance",
-    },
-  ];
+const ChallengesSolutionsSection = ({ project }) => {
+  const challengesAndSolutions = project.challengesAndSolutions;
 
   return (
     <section className="w-full bg-background dark:bg-background-dark py-16 md:py-24">

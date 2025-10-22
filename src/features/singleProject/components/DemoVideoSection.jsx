@@ -1,19 +1,8 @@
 import React from "react";
 import { Play, ExternalLink, Clock, Share2, Youtube } from "lucide-react";
 
-const DemoVideoSection = () => {
-  // This would typically come from props or a data source
-  const videoData = {
-    title:
-      "Learneazy LMS - Full-Stack Next.js & Express Project with VidoCipher, Stripe & More",
-    thumbnail: "", // Video thumbnail image
-    youtubeUrl: "https://youtube.com/watch?v=example",
-    duration: "15:30",
-    author: "Ehtesham Zahid",
-    role: "Software Engineer",
-    watchLaterUrl: "#",
-    shareUrl: "#",
-  };
+const DemoVideoSection = ({ project }) => {
+  const videoData = project.videoData;
 
   return (
     <section className="w-full bg-background dark:bg-background-dark py-16 md:py-24">

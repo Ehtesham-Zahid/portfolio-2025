@@ -25,31 +25,8 @@ const slugMap = {
   Vercel: "vercel",
 };
 
-const TechnologiesSection = () => {
-  // This would typically come from props or a data source
-  const technologies = [
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Material-UI",
-    "Redux Toolkit",
-    "React Hot Toast",
-    "Formik",
-    "Yup",
-    "Express.js",
-    "MongoDB",
-    "Redis",
-    "JWT",
-    "Bcrypt",
-    "NextAuth.js",
-    "VidoCipher",
-    "Stripe",
-    "Cloudinary",
-    "Socket.io",
-    "NodeMailer",
-    "Recharts",
-    "Vercel",
-  ];
+const TechnologiesSection = ({ project }) => {
+  const technologies = project.technologies;
 
   return (
     <section className="w-full bg-background dark:bg-background-dark py-16 md:py-24">

@@ -11,94 +11,22 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import Badge from "@/features/skills/components/badge";
+import { getAllProjects } from "@/constants";
 
-const projects = [
-  {
-    id: 1,
-    title: "HealthSIA",
-    description:
-      "A patient-therapist-surgeon communication and perioperative care platform with role-based dashboards and real-time chat.",
-    image: "",
-    category: "Full Stack",
-    tech: [
-      "React.js",
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "MySQL",
-      "Socket.io",
-      "Docker",
-      "TypeScript",
-      "Tailwind CSS",
-      "AWS",
-    ],
-    duration: "Aug 2024 - Apr 2025",
-    team: "2 developers, 1 designer, 1 QA, 1 PM",
-    demoUrl: "#",
-    codeUrl: "#",
-    detailsUrl: "#",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Peepskill",
-    description:
-      "A sports-focused social networking platform with role-based profiles, feeds, connections, and content moderation, serving 2,000+ early users.",
-    image: "",
-    category: "Full Stack",
-    tech: [
-      "React.js",
-      "Next.js",
-      "Sequelize",
-      "Node.js",
-      "MySQL",
-      "Docker",
-      "GCP",
-      "Socket.io",
-      "Redis",
-      "JWT",
-    ],
-    duration: "Nov 2024 - Mar 2025",
-    team: "2 Developer, 1 Designer, 1 PM",
-    demoUrl: "#",
-    codeUrl: "#",
-    detailsUrl: "#",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Royal Vision Tourism",
-    description:
-      "A full-featured travel booking and commerce platform with multi-currency payments, dynamic pricing, and advanced admin dashboards.",
-    image: "",
-    category: "Full Stack",
-    tech: [
-      "React.js",
-      "Next.js",
-      "Node.js",
-      "MySQL",
-      "TypeScript",
-      "Docker",
-      "GCP",
-      "CC Avenue",
-      "SMTP",
-      "MUI",
-      "Redux",
-    ],
-    duration: "Mar 2025 - Jun 2025",
-    team: "1 Developer, 1 Designer, 1 PM",
-    demoUrl: "#",
-    codeUrl: "#",
-    detailsUrl: "#",
-    featured: true,
-  },
+const projects = getAllProjects();
+
+const categories = [
+  "All",
+  "Education",
+  "Healthcare",
+  "E-commerce",
+  "Social",
+  "Travel",
 ];
 
-const categories = ["All", "Full Stack", "Backend", "Mobile App"];
-
 const ProjectCard = ({ project, view = "grid" }) => {
-  const visibleTech = project.tech.slice(0, 3);
-  const remainingTech = project.tech.length - 3;
+  const visibleTech = project.technologies.slice(0, 3);
+  const remainingTech = project.technologies.length - 3;
 
   return (
     <div
@@ -134,14 +62,12 @@ const ProjectCard = ({ project, view = "grid" }) => {
         <div className="absolute top-4 left-4">
           <Badge tone="accent">{project.category}</Badge>
         </div>
-        {/* Featured Badge */}
-        {project.featured && (
-          <div className="absolute top-4 right-4">
-            <span className="px-2 py-1 text-xs font-medium bg-primary-light dark:bg-primary-dark text-white rounded-full">
-              Featured
-            </span>
-          </div>
-        )}
+        {/* Status Badge */}
+        <div className="absolute top-4 right-4">
+          <span className="px-2 py-1 text-xs font-medium bg-primary-light dark:bg-primary-dark text-white rounded-full">
+            {project.status}
+          </span>
+        </div>
       </div>
 
       {/* Content */}
@@ -171,11 +97,11 @@ const ProjectCard = ({ project, view = "grid" }) => {
         <div className="space-y-2 mb-6">
           <div className="flex items-center gap-2 text-sm text-text2 dark:text-text1-dark/70">
             <Calendar className="h-4 w-4" />
-            <span>{project.duration}</span>
+            <span>{project.year}</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-text2 dark:text-text1-dark/70">
             <Users className="h-4 w-4" />
-            <span>{project.team}</span>
+            <span>{project.stats}</span>
           </div>
         </div>
 
@@ -214,7 +140,7 @@ const ProjectCard = ({ project, view = "grid" }) => {
             className="h-10 w-10 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
           >
             <a
-              href={project.demoUrl}
+              href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
               aria-label="View Demo"
@@ -238,7 +164,7 @@ const ProjectsPageSection = () => {
       const matchesSearch =
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.tech.some((tech) =>
+        project.technologies.some((tech) =>
           tech.toLowerCase().includes(searchQuery.toLowerCase())
         );
       const matchesCategory =

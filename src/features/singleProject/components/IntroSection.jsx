@@ -9,21 +9,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 
-const IntroSection = () => {
-  // This would typically come from props or a data source
-  const project = {
-    title: "Learneazy",
-    category: "Education",
-    year: "2025",
-    status: "Production",
-    description:
-      "A Learning Management System with VidoCipher secure video protection, Stripe payments, and enrollment analytics for instructors to sell courses without piracy concerns.",
-    liveUrl: "#",
-    codeUrl: "#",
-    image: "", // Project screenshot
-    stats: "25,000+ students",
-  };
-
+const IntroSection = ({ project }) => {
   return (
     <section className="w-full bg-background dark:bg-background-dark py-16 md:py-24">
       <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8">

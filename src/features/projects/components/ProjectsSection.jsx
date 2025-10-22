@@ -3,62 +3,17 @@ import { Button } from "@/shadcn-components/ui/button";
 import { ExternalLink, Github, Play, ArrowRight } from "lucide-react";
 import Badge from "@/features/skills/components/badge";
 import { Link } from "react-router";
+import { getAllProjects } from "@/constants";
 
-const projects = [
-  {
-    title: "HealthSIA",
-    description:
-      "Role-based dashboards and real-time chat for a patient–therapist–surgeon communication platform.",
-    image: "", // optional image path; leave empty for gradient placeholder
-    tech: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "MySQL",
-      "Socket.io",
-      "Docker",
-    ],
-    demoUrl: "#",
-    codeUrl: "#",
-    detailsUrl: "#",
-  },
-  {
-    title: "Peepskill",
-    description:
-      "Social platform featuring profiles, feeds, connections, and moderation, serving 2,000+ users.",
-    image: "",
-    tech: [
-      "React",
-      "Next.js",
-      "Sequelize",
-      "Node.js",
-      "MySQL",
-      "Docker",
-      "GCP",
-    ],
-    demoUrl: "#",
-    codeUrl: "#",
-    detailsUrl: "#",
-  },
-  {
-    title: "Royal Vision Tourism",
-    description:
-      "Travel booking and commerce platform with multi-currency pricing and admin dashboards.",
-    image: "",
-    tech: ["React", "Next.js", "Node.js", "MySQL", "TypeScript", "Docker"],
-    demoUrl: "#",
-    codeUrl: "#",
-    detailsUrl: "#",
-  },
-];
+// Get featured projects (first 3)
+const projects = getAllProjects().slice(0, 3);
 
 const ProjectCard = ({
   title,
   description,
   image,
-  tech,
-  demoUrl,
+  technologies,
+  liveUrl,
   codeUrl,
   detailsUrl,
 }) => {
@@ -88,9 +43,12 @@ const ProjectCard = ({
 
         {/* Tech badges */}
         <div className="mt-4 flex flex-wrap gap-2">
-          {tech.map((t) => (
-            <Badge key={t}>{t}</Badge>
+          {technologies.slice(0, 4).map((tech) => (
+            <Badge key={tech}>{tech}</Badge>
           ))}
+          {technologies.length > 4 && (
+            <Badge>+{technologies.length - 4} more</Badge>
+          )}
         </div>
 
         {/* Actions */}
@@ -100,7 +58,7 @@ const ProjectCard = ({
             className="bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 h-9 px-4"
           >
             <a
-              href={demoUrl}
+              href={liveUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2"

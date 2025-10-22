@@ -9,46 +9,18 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const FeaturesSection = () => {
-  // This would typically come from props or a data source
-  const features = [
-    {
-      icon: Shield,
-      title: "DRM-protected video streaming",
-      description:
-        "Uses the VidoCipher API to prevent content piracy and unauthorized downloads, ensuring instructors' intellectual property is fully protected.",
-    },
-    {
-      icon: Users,
-      title: "Multi-role authentication",
-      description:
-        "Supports both students and instructors with JWT authentication and social login integration for seamless user experience.",
-    },
-    {
-      icon: BookOpen,
-      title: "Course creation platform",
-      description:
-        "Features a drag-and-drop curriculum builder with instant Stripe payment-to-enrollment integration for streamlined course management.",
-    },
-    {
-      icon: Bell,
-      title: "Real-time notifications",
-      description:
-        "Delivered via Socket.io with advanced course filtering, search capabilities, and responsive dark/light mode design.",
-    },
-    {
-      icon: BarChart3,
-      title: "Analytics dashboard",
-      description:
-        "Utilizes Recharts to provide comprehensive insights into enrollment metrics, revenue tracking, and user management.",
-    },
-    {
-      icon: MessageCircle,
-      title: "Interactive learning tools",
-      description:
-        "Encompasses a Q&A system, reviews, and course completion tracking with milestones for enhanced student engagement.",
-    },
-  ];
+const ICON_MAP = {
+  Star,
+  Shield,
+  Users,
+  BookOpen,
+  Bell,
+  BarChart3,
+  MessageCircle,
+};
+
+const FeaturesSection = ({ project }) => {
+  const features = project.features;
 
   return (
     <section className="w-full bg-background dark:bg-background-dark py-16 md:py-24">
@@ -65,7 +37,7 @@ const FeaturesSection = () => {
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
-              const IconComponent = feature.icon;
+              const IconComponent = ICON_MAP[feature.icon] || Star;
               return (
                 <div
                   key={index}
