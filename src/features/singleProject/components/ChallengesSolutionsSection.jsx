@@ -1,5 +1,5 @@
 import React from "react";
-import { AlertCircle, CheckCirclem } from "lucide-react";
+import { AlertCircle, CheckCircle } from "lucide-react";
 
 const ChallengesSolutionsSection = () => {
   // This would typically come from props or a data source
