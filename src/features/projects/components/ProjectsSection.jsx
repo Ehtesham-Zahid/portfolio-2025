@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/shadcn-components/ui/button";
 import { ExternalLink, Github, Play, ArrowRight } from "lucide-react";
-import Badge from "@/features/skills/components/badge";
+import Badge from "@/components/Badge";
 import { Link } from "react-router";
 import { getAllProjects } from "@/constants";
 

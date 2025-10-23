@@ -10,7 +10,7 @@ import {
   Filter,
   ArrowLeft,
 } from "lucide-react";
-import Badge from "@/features/skills/components/badge";
+import Badge from "@/components/Badge";
 import { getAllProjects } from "@/constants";
 
 const projects = getAllProjects();
