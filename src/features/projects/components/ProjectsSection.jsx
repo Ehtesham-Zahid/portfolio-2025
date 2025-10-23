@@ -18,7 +18,7 @@ const ProjectCard = ({
   detailsUrl,
 }) => {
   return (
-    <div className="group rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden hover:-translate-y-0.5">
+    <div className="group h-full flex flex-col rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden hover:-translate-y-0.5">
       {/* Cover */}
       <div className="relative aspect-[16/9] w-full bg-gradient-to-br from-secondary-light/70 to-transparent dark:from-secondary-dark/40">
         {image ? (
@@ -33,11 +33,11 @@ const ProjectCard = ({
       </div>
 
       {/* Body */}
-      <div className="p-5">
+      <div className="flex flex-col flex-1 p-5">
         <h3 className="text-lg font-bold text-text1-light dark:text-text1-dark">
           {title}
         </h3>
-        <p className="mt-2 text-sm text-text2 dark:text-text1-dark/80">
+        <p className="mt-2 text-sm text-text2 dark:text-text1-dark/80 flex-1">
           {description}
         </p>
 

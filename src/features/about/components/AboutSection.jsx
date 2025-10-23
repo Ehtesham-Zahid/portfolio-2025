@@ -37,12 +37,14 @@ const AboutSection = () => {
             About me
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-text1 dark:text-text1-dark">
-            I design and build delightful frontends that feel effortless
+            I design and build full-stack applications that feel effortless
           </h2>
           <p className="mt-4 text-text2 dark:text-text1-dark/80">
-            I’m a frontend developer focused on crafting pragmatic, elegant
-            interfaces. I enjoy bridging design and engineering to ship
-            experiences that are fast, accessible, and genuinely enjoyable.
+            I'm a full-stack developer specializing in MERN stack and Next.js,
+            focused on crafting complete solutions from database architecture to
+            user interfaces. I enjoy bridging backend logic and frontend design
+            to ship applications that are scalable, performant, and
+            user-friendly.
           </p>
         </div>
 
@@ -84,7 +86,8 @@ const AboutSection = () => {
                 <li className="relative pl-6">
                   <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary dark:bg-primary-dark" />
                   <p className="text-sm text-text1 dark:text-text1-dark">
-                    2023–Now — Frontend Developer, building React/Tailwind apps
+                    2023–Now — Full Stack Developer, building MERN & Next.js
+                    apps
                   </p>
                   <p className="text-xs text-text2 dark:text-text1-dark/70">
                     Performance, accessibility, and design systems
@@ -96,7 +99,8 @@ const AboutSection = () => {
                     2021–2023 — Freelance & mentoring
                   </p>
                   <p className="text-xs text-text2 dark:text-text1-dark/70">
-                    Shipped sites and guided learners into modern frontend
+                    Shipped full-stack applications and guided learners into
+                    modern development
                   </p>
                 </li>
                 <li className="relative pl-6">

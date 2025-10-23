@@ -30,8 +30,8 @@ const ProjectCard = ({ project, view = "grid" }) => {
 
   return (
     <div
-      className={`group rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden hover:-translate-y-0.5 ${
-        view === "list" ? "flex" : ""
+      className={`group h-full rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden hover:-translate-y-0.5 ${
+        view === "list" ? "flex" : "flex flex-col"
       }`}
     >
       {/* Cover Image */}
@@ -71,11 +71,13 @@ const ProjectCard = ({ project, view = "grid" }) => {
       </div>
 
       {/* Content */}
-      <div className={`p-6 ${view === "list" ? "flex-1" : ""}`}>
+      <div
+        className={`p-6 flex flex-col ${view === "list" ? "flex-1" : "flex-1"}`}
+      >
         <h3 className="text-xl font-bold text-text1-light dark:text-text1-dark mb-2">
           {project.title}
         </h3>
-        <p className="text-text2 dark:text-text1-dark/80 mb-4 line-clamp-3">
+        <p className="text-text2 dark:text-text1-dark/80 mb-4 line-clamp-3 flex-1">
           {project.description}
         </p>
 

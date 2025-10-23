@@ -19,20 +19,20 @@ const HeroSection = () => {
               <span className="text-primary dark:text-primary-dark">Zahid</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-text2 dark:text-text1-dark/80 max-w-2xl">
-              A Frontend Developer crafting clean, performant, and accessible
-              experiences. I love building modern, delightful UIs with React,
-              Tailwind, and great design.
+              A Full Stack Developer specializing in MERN stack and Next.js,
+              crafting end-to-end solutions from database design to user
+              interfaces.
             </p>
 
             {/* Tech chips */}
             <div className="mt-8 flex flex-wrap gap-3">
               {[
+                "MongoDB",
+                "Express.js",
                 "React",
-                "Next.js",
                 "Node.js",
+                "Next.js",
                 "TypeScript",
-                "AWS",
-                "Docker",
               ].map((skill) => (
                 <span
                   key={skill}

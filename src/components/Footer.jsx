@@ -61,8 +61,9 @@ const Footer = () => {
                   </span>
                 </h3>
                 <p className="mt-2 text-text2 dark:text-text1-dark/80 max-w-md">
-                  Frontend Developer crafting clean, performant, and accessible
-                  experiences. Let's build something amazing together.
+                  Full Stack Developer crafting clean, performant, and
+                  accessible experiences. Let's build something amazing
+                  together.
                 </p>
               </div>
 

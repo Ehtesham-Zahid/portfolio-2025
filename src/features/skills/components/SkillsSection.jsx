@@ -13,6 +13,7 @@ const CATEGORIES = [
 ];
 
 const SKILLS = [
+  // Frontend
   { name: "HTML", category: "Frontend" },
   { name: "CSS", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
@@ -21,16 +22,37 @@ const SKILLS = [
   { name: "Next.js", category: "Frontend" },
   { name: "Redux", category: "Frontend" },
   { name: "RTK Query", category: "Frontend" },
+  { name: "Material-UI", category: "Frontend" },
+
+  // Backend
   { name: "Node.js", category: "Backend" },
   { name: "Express.js", category: "Backend" },
   { name: "REST APIs", category: "Backend" },
+  { name: "GraphQL", category: "Backend" },
   { name: "Socket.io", category: "Backend" },
+  { name: "JWT", category: "Backend" },
+  { name: "Bcrypt", category: "Backend" },
+  { name: "Multer", category: "Backend" },
+
+  // Database
+  { name: "MongoDB", category: "Database" },
+  { name: "Mongoose", category: "Database" },
+  { name: "Redis", category: "Database" },
+  { name: "MySQL", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+
+  // Languages
   { name: "TypeScript", category: "Language" },
   { name: "JavaScript", category: "Language" },
-  { name: "MongoDB", category: "Database" },
-  { name: "Redis", category: "Database" },
-  { name: "Postman", category: "Tools" },
+  { name: "Python", category: "Language" },
+
+  // Tools & DevOps
   { name: "Git", category: "Tools" },
+  { name: "Postman", category: "Tools" },
+  { name: "Docker", category: "Tools" },
+  { name: "AWS", category: "Tools" },
+  { name: "Vercel", category: "Tools" },
+  { name: "Heroku", category: "Tools" },
 ];
 
 const SkillsSection = () => {

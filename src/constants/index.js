@@ -1,5 +1,6 @@
 // Project data structure
 import skillstackImage from "@/assets/images/projects/skillstack.png";
+import swiftcartImage from "@/assets/images/projects/swiftcart.png";
 export const projects = [
   {
     id: "skillstack-lms",
@@ -98,77 +99,103 @@ export const projects = [
       },
     ],
     videoData: {
-      thumbnail: skillstackImage, // optional thumbnail image
+      thumbnail: skillstackImage,
       youtubeUrl: "https://youtu.be/PC2D0_RNu4k",
     },
   },
   {
-    id: "healthsia-platform",
-    title: "HealthSIA",
-    category: "Healthcare",
-    year: "2024",
+    id: "swiftcart-ecommerce",
+    title: "SwiftCart",
+    category: "E-commerce",
+    year: "2025",
     status: "Production",
     description:
-      "A patient-therapist-surgeon communication and perioperative care platform with role-based dashboards and real-time chat.",
+      "A full-stack multi-vendor e-commerce marketplace with real-time chat, secure payments, and event-based flash sales for an engaging shopping experience.",
     about:
-      "HealthSIA is a comprehensive healthcare communication platform designed to streamline patient care coordination between therapists, surgeons, and patients. The platform features role-based dashboards, real-time messaging, and comprehensive patient management tools.",
-    image: "",
-    liveUrl: "#",
-    codeUrl: "#",
-    detailsUrl: "#",
-    stats: "500+ healthcare professionals",
+      "SwiftCart is a scalable multi-vendor e-commerce platform designed to empower sellers and enhance the shopping experience for buyers. Built with the MERN stack, the application supports secure authentication, Stripe-powered payments, and real-time customer-seller communication through Socket.io. Sellers can manage stores, track orders, and analyze performance while customers enjoy product filtering, wishlist/cl cart functionality, event-based sale timers, and streamlined checkout. The platform includes a powerful admin console for catalog moderation, vendor management, and system-wide analytics.",
+    image: swiftcartImage,
+    liveUrl: "https://swift-cartt.vercel.app/",
+    codeUrl: "https://github.com/Ehtesham-Zahid/multivendor-project",
+    detailsUrl: "/projects/swiftcart-ecommerce",
+    stats: "30+ Active Vendors",
     technologies: [
-      "React",
-      "Next.js",
+      "React.js",
       "Node.js",
       "Express.js",
-      "MySQL",
+      "MongoDB",
+      "Mongoose",
+      "Redux Toolkit",
       "Socket.io",
-      "Docker",
-      "TypeScript",
       "Tailwind CSS",
-      "AWS",
+      "ShadCN UI",
+      "Stripe",
+      "Cloudinary",
+      "JWT",
+      "Bcrypt",
     ],
     features: [
       {
-        icon: "Shield",
-        title: "HIPAA-compliant messaging",
+        icon: "Lock",
+        title: "Secure role-based access",
         description:
-          "Secure real-time communication between healthcare professionals with end-to-end encryption.",
+          "Authentication system with JWT, ensuring buyers, sellers, and admins have isolated permissions.",
       },
       {
-        icon: "Users",
-        title: "Role-based access control",
+        icon: "ShoppingCart",
+        title: "Seamless shopping experience",
         description:
-          "Differentiated dashboards and permissions for patients, therapists, and surgeons.",
+          "Product filtering, pagination, wishlist, and fast checkout flow for user convenience.",
       },
       {
-        icon: "Calendar",
-        title: "Appointment scheduling",
+        icon: "MessageCircle",
+        title: "Real-time messaging",
         description:
-          "Integrated scheduling system with automated reminders and conflict resolution.",
+          "Instant communication between buyers and vendors powered by Socket.io.",
+      },
+      {
+        icon: "Timer",
+        title: "Event-based flash sales",
+        description:
+          "Countdown timer system enabling time-restricted deals to boost conversions.",
+      },
+      {
+        icon: "Package",
+        title: "Order & inventory management",
+        description:
+          "Efficient tools for sellers to process orders, update inventory, and manage sales.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Analytics dashboards",
+        description:
+          "Performance insights for both sellers and admins with revenue and engagement metrics.",
       },
     ],
     challengesAndSolutions: [
       {
         challenge:
-          "Ensuring HIPAA compliance while maintaining real-time communication capabilities",
+          "Maintaining real-time interactions without affecting platform performance",
         solution:
-          "Implemented end-to-end encryption with secure key management and audit logging for all communications",
+          "Integrated Socket.io with optimized event handling and Redis-backed messaging architecture (optional future scale).",
       },
       {
         challenge:
-          "Managing complex role-based permissions across different user types",
+          "Handling secure online payments and vendor-specific revenue split",
         solution:
-          "Built a flexible permission system with middleware-based access control and dynamic UI rendering",
+          "Stripe checkout with webhook automation and separate vendor payout logic.",
+      },
+      {
+        challenge:
+          "Ensuring a scalable structure for multiple vendors and large product catalogs",
+        solution:
+          "Modular database schema with efficient indexing and paginated product queries.",
       },
     ],
     videoData: {
-      thumbnail: "",
-      youtubeUrl: "https://youtube.com/watch?v=example2",
+      thumbnail: swiftcartImage,
+      youtubeUrl: "https://youtu.be/PC2D0_RNu4k",
     },
   },
-  // Add more projects here...
 ];
 
 // Helper function to get project by ID
@@ -179,9 +206,4 @@ export const getProjectById = (id) => {
 // Helper function to get all projects
 export const getAllProjects = () => {
   return projects;
-};
-
-// Helper function to get projects by category
-export const getProjectsByCategory = (category) => {
-  return projects.filter((project) => project.category === category);
 };
