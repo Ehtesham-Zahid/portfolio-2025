@@ -3,8 +3,19 @@ import { Button } from "@/shadcn-components/ui/button";
 import { Briefcase, FolderGit2, Users } from "lucide-react";
 import profilePic from "@/assets/images/profile-pic-3.png";
 import StatChip from "./StatChip";
+import { Link } from "react-router";
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section className="w-full bg-background-light dark:bg-background-dark">
       <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16 min-h-[calc(100vh-4rem)] flex items-center">
@@ -47,18 +58,22 @@ const HeroSection = () => {
             </div>
 
             <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
-              <Button className="bg-primary-light dark:bg-primary-dark text-white hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 text-text1-light dark:text-text1-dark font-medium hover:opacity-90 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto">
+              <Button
+                onClick={() => scrollToSection("projects")}
+                className="bg-primary-light dark:bg-primary-dark text-white hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 text-text1-light dark:text-text1-dark font-medium hover:opacity-90 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
+              >
                 View Projects
               </Button>
               <Button
+                onClick={() => scrollToSection("contact")}
                 variant="outline"
-                className="border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
+                className="border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
               >
                 Contact Me
               </Button>
               <Button
                 variant="ghost"
-                className="text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
+                className="text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
               >
                 Download CV
               </Button>
