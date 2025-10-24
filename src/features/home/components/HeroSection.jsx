@@ -60,7 +60,7 @@ const HeroSection = () => {
             <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
               <Button
                 onClick={() => scrollToSection("projects")}
-                className="bg-primary-light dark:bg-primary-dark text-white hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 text-text1-light dark:text-text1-dark font-medium hover:opacity-90 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
+                className="bg-primary-light dark:bg-primary-dark   hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 text-text1-light dark:text-text1-dark font-medium hover:opacity-90 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
               >
                 View Projects
               </Button>

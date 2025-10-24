@@ -28,7 +28,6 @@ const SKILLS = [
   { name: "Node.js", category: "Backend" },
   { name: "Express.js", category: "Backend" },
   { name: "REST APIs", category: "Backend" },
-  { name: "GraphQL", category: "Backend" },
   { name: "Socket.io", category: "Backend" },
   { name: "JWT", category: "Backend" },
   { name: "Bcrypt", category: "Backend" },
@@ -38,21 +37,15 @@ const SKILLS = [
   { name: "MongoDB", category: "Database" },
   { name: "Mongoose", category: "Database" },
   { name: "Redis", category: "Database" },
-  { name: "MySQL", category: "Database" },
-  { name: "PostgreSQL", category: "Database" },
 
   // Languages
   { name: "TypeScript", category: "Language" },
   { name: "JavaScript", category: "Language" },
-  { name: "Python", category: "Language" },
 
   // Tools & DevOps
   { name: "Git", category: "Tools" },
   { name: "Postman", category: "Tools" },
-  { name: "Docker", category: "Tools" },
-  { name: "AWS", category: "Tools" },
   { name: "Vercel", category: "Tools" },
-  { name: "Heroku", category: "Tools" },
 ];
 
 const SkillsSection = () => {
@@ -71,7 +64,7 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="w-full bg-background dark:bg-background-dark"
+      className="w-full bg-background-light dark:bg-background-dark"
     >
       <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         {/* Header */}
@@ -79,7 +72,7 @@ const SkillsSection = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-text1-light dark:text-text1-dark">
             Skills & Technologies
           </h2>
-          <p className="mt-3 text-text2 dark:text-text1-dark/80">
+          <p className="mt-3 text-text2-light dark:text-text1-dark/80">
             A comprehensive overview of my technical expertise across the full
             stack
           </p>
@@ -89,13 +82,13 @@ const SkillsSection = () => {
         <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
           {/* Search */}
           <div className="flex-1 min-w-[260px] max-w-xl relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text2 dark:text-text1-dark/70" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text2-light dark:text-text1-dark/70" />
             <input
               type="text"
               placeholder="Search skills..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full pl-9 pr-3 h-10 rounded-md border border-secondary-light dark:border-secondary-dark bg-background/60 dark:bg-background-dark/60 text-text1-light dark:text-text1-dark placeholder:text-text2 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition"
+              className="w-full pl-9 pr-3 h-10 rounded-md border border-secondary-light dark:border-secondary-dark bg-background-light/60 dark:bg-background-dark/60 text-text1-light dark:text-text1-dark placeholder:text-text2-light focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition"
             />
           </div>
 
