@@ -9,7 +9,7 @@ import Footer from "../../components/Footer";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background dark:bg-background-dark">
+    <div className="min-h-screen flex flex-col bg-background-light dark:bg-background-dark">
       <Header />
       <main>
         <HeroSection />
