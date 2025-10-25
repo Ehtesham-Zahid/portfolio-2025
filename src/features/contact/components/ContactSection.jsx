@@ -34,19 +34,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "ehtesham@example.com",
-      href: "mailto:ehtesham@example.com",
+      value: "ehteshamzahid313@gmail.com",
+      href: "mailto:ehteshamzahid313@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+92 345 4808884",
+      href: "tel:+923454808884",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Lahore, Pakistan",
       href: "#",
     },
   ];
@@ -55,19 +55,19 @@ const ContactSection = () => {
     {
       icon: Github,
       name: "GitHub",
-      href: "https://github.com/ehtesham",
+      href: "https://github.com/Ehtesham-Zahid",
       color: "hover:text-gray-900 dark:hover:text-gray-100",
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      href: "https://linkedin.com/in/ehtesham",
+      href: "https://www.linkedin.com/in/ehtesham-zahid/",
       color: "hover:text-blue-600 dark:hover:text-blue-400",
     },
     {
       icon: Twitter,
       name: "Twitter",
-      href: "https://twitter.com/ehtesham",
+      href: "#",
       color: "hover:text-blue-500 dark:hover:text-blue-400",
     },
   ];

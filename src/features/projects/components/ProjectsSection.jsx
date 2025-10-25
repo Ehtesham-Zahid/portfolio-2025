@@ -52,10 +52,10 @@ const ProjectCard = ({
         </div>
 
         {/* Actions */}
-        <div className="mt-5 flex items-center gap-2">
+        <div className="mt-5 flex flex-wrap items-center gap-2 lg:flex-nowrap">
           <Button
             asChild
-            className="bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 h-9 px-4"
+            className="bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 h-9 px-3 lg:px-4 flex-1 lg:flex-none"
           >
             <a
               href={liveUrl}
@@ -69,7 +69,7 @@ const ProjectCard = ({
           <Button
             asChild
             variant="outline"
-            className="h-9 px-4 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
+            className="h-9 px-3 lg:px-4 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70 flex-1 lg:flex-none"
           >
             <a
               href={codeUrl}
@@ -83,7 +83,7 @@ const ProjectCard = ({
           <Button
             asChild
             variant="secondary"
-            className="h-9 px-4 bg-secondary-light dark:bg-secondary-dark text-text1-light dark:text-text1-dark"
+            className="h-9 px-3 lg:px-4 bg-secondary-light dark:bg-secondary-dark text-text1-light dark:text-text1-dark flex-1 lg:flex-none"
           >
             <a href={detailsUrl} className="inline-flex items-center gap-2">
               Details <ArrowRight className="h-4 w-4" />
