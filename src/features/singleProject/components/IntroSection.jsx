@@ -64,10 +64,10 @@ const IntroSection = ({ project }) => {
               </div>
 
               {/* Stats */}
-              <div className="flex items-center gap-2 text-text2 dark:text-text1-dark/70">
+              {/* <div className="flex items-center gap-2 text-text2 dark:text-text1-dark/70">
                 <div className="h-2 w-2 rounded-full bg-primary-light dark:bg-primary-dark" />
                 <span className="text-sm font-medium">{project.stats}</span>
-              </div>
+              </div> */}
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">

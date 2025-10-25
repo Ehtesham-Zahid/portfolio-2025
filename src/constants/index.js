@@ -9,9 +9,9 @@ export const projects = [
     year: "2025",
     status: "Production",
     description:
-      "A Learning Management System with VidoCipher secure video protection, Stripe payments, and enrollment analytics for instructors to sell courses without piracy concerns.",
+      "A Learning Management System with VdoCipher secure video protection, Stripe payments, and enrollment analytics for instructors to sell courses without piracy concerns.",
     about:
-      "SkillStack represents a comprehensive Learning Management System designed to revolutionize online education. Built with modern web technologies, this platform addresses the critical challenges faced by instructors in the digital learning space, particularly around content protection and monetization. The system integrates advanced video security through VidoCipher, ensuring that educational content remains protected from piracy while maintaining an excellent user experience for legitimate learners. With seamless Stripe payment integration and detailed enrollment analytics, instructors can focus on creating quality content while the platform handles the technical complexities of course delivery and student management.",
+      "SkillStack represents a comprehensive Learning Management System designed to revolutionize online education. Built with modern web technologies, this platform addresses the critical challenges faced by instructors in the digital learning space, particularly around content protection and monetization. The system integrates advanced video security through VdoCipher, ensuring that educational content remains protected from piracy while maintaining an excellent user experience for legitimate learners. With seamless Stripe payment integration and detailed enrollment analytics, instructors can focus on creating quality content while the platform handles the technical complexities of course delivery and student management.",
     image: skillstackImage, // Project screenshot
     liveUrl: "https://skillstack-frontend-4.onrender.com/",
     codeUrl: "https://github.com/Ehtesham-Zahid/SkillStack",
@@ -32,7 +32,7 @@ export const projects = [
       "JWT",
       "Bcrypt",
       "NextAuth.js",
-      "VidoCipher",
+      "VdoCipher",
       "Stripe",
       "Cloudinary",
       "Socket.io",
@@ -45,7 +45,7 @@ export const projects = [
         icon: "Shield",
         title: "DRM-protected video streaming",
         description:
-          "Uses the VidoCipher API to prevent content piracy and unauthorized downloads, ensuring instructors' intellectual property is fully protected.",
+          "Uses the VdoCipher API to prevent content piracy and unauthorized downloads, ensuring instructors' intellectual property is fully protected.",
       },
       {
         icon: "Users",
@@ -83,7 +83,7 @@ export const projects = [
         challenge:
           "Preventing video piracy while maintaining streaming performance across all devices and browsers",
         solution:
-          "Integrated VidoCipher DRM with OTP-based validation for secure, piracy-resistant video streaming",
+          "Integrated VdoCipher DRM with OTP-based validation for secure, piracy-resistant video streaming",
       },
       {
         challenge:
@@ -119,7 +119,7 @@ export const projects = [
     detailsUrl: "/projects/swiftcart-ecommerce",
     stats: "30+ Active Vendors",
     technologies: [
-      "React.js",
+      "React",
       "Node.js",
       "Express.js",
       "MongoDB",
@@ -127,7 +127,7 @@ export const projects = [
       "Redux Toolkit",
       "Socket.io",
       "Tailwind CSS",
-      "ShadCN UI",
+      "ShadCN",
       "Stripe",
       "Cloudinary",
       "JWT",

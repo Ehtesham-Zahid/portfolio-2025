@@ -113,10 +113,10 @@ const ProjectCard = ({ project, view = "grid" }) => {
             <Calendar className="h-4 w-4" />
             <span>{project.year}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-text2 dark:text-text1-dark/70">
+          {/* <div className="flex items-center gap-2 text-sm text-text2 dark:text-text1-dark/70">
             <Users className="h-4 w-4" />
             <span>{project.stats}</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Actions */}

@@ -5,7 +5,7 @@ import html5Icon from "@/assets/icons/skills/html5.svg";
 import css3Icon from "@/assets/icons/skills/css3.svg";
 import tailwindIcon from "@/assets/icons/skills/tailwindcss.svg";
 import reactIcon from "@/assets/icons/skills/react.svg";
-import nextjsIcon from "@/assets/icons/skills/nextdotjs.png";
+import nextjsIcon from "@/assets/icons/skills/nextdotjs-black.svg";
 import javascriptIcon from "@/assets/icons/skills/javascript.svg";
 import typescriptIcon from "@/assets/icons/skills/typescript.svg";
 import nodejsIcon from "@/assets/icons/skills/nodedotjs.svg";
@@ -25,6 +25,8 @@ import shadcnIcon from "@/assets/icons/skills/shadcn.png";
 import jwtIcon from "@/assets/icons/skills/jwt.png";
 import multerIcon from "@/assets/icons/skills/multer.svg";
 import bcryptIcon from "@/assets/icons/skills/bcrypt.svg";
+import stripeIcon from "@/assets/icons/skills/stripe.svg";
+import cloudinaryIcon from "@/assets/icons/skills/cloudinary.svg";
 
 // Map skill names to local SVG imports
 const iconMap = {
@@ -58,10 +60,10 @@ const iconMap = {
   "NextAuth.js": nextjsIcon,
   NodeMailer: postmanIcon, // Using Postman icon as fallback
   Recharts: reactIcon, // Using React icon as fallback
-  VidoCipher: reactIcon, // Using React icon as fallback
-  Stripe: reactIcon, // Using React icon as fallback
-  Cloudinary: reactIcon, // Using React icon as fallback
+  VdoCipher: reactIcon, // Using React icon as fallback
+  Cloudinary: cloudinaryIcon, // Using React icon as fallback
   Zod: typescriptIcon, // Using TypeScript icon as fallback
+  Stripe: stripeIcon, // Using Stripe icon as fallback
 };
 
 const TechIcon = ({ name }) => {
