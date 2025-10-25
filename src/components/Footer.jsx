@@ -4,38 +4,45 @@ import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const socialLinks = [
     {
       icon: Github,
       name: "GitHub",
-      href: "https://github.com/ehtesham",
+      href: "https://github.com/Ehtesham-Zahid",
       color: "hover:text-gray-900 dark:hover:text-gray-100",
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      href: "https://linkedin.com/in/ehtesham",
+      href: "https://www.linkedin.com/in/ehtesham-zahid/",
       color: "hover:text-blue-600 dark:hover:text-blue-400",
     },
     {
       icon: Twitter,
       name: "Twitter",
-      href: "https://twitter.com/ehtesham",
+      href: "#",
       color: "hover:text-blue-500 dark:hover:text-blue-400",
     },
     {
       icon: Mail,
       name: "Email",
-      href: "mailto:ehtesham@example.com",
+      href: "mailto:ehteshamzahid313@gmail.com",
       color: "hover:text-red-500 dark:hover:text-red-400",
     },
   ];
 
   const quickLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Projects", id: "projects" },
+    { name: "Contact", id: "contact" },
   ];
 
   const services = [
@@ -92,12 +99,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-text2 dark:text-text1-dark/80 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-200"
+                    <button
+                      onClick={() => scrollToSection(link.id)}
+                      className="text-text2 dark:text-text1-dark/80 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-200 text-left"
                     >
                       {link.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

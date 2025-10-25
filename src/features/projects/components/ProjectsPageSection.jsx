@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Button } from "@/shadcn-components/ui/button";
 import {
   Search,
@@ -31,23 +31,33 @@ const ProjectCard = ({ project, view = "grid" }) => {
   return (
     <div
       className={`group h-full rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden hover:-translate-y-0.5 ${
-        view === "list" ? "flex" : "flex flex-col"
+        view === "list" ? "flex flex-col sm:flex-row" : "flex flex-col"
       }`}
     >
       {/* Cover Image */}
       <div
-        className={`relative aspect-[16/9] w-full bg-gradient-to-br from-secondary-light/70 to-transparent dark:from-secondary-dark/40 ${
-          view === "list" ? "w-80 flex-shrink-0" : ""
+        className={`relative bg-gradient-to-br from-secondary-light/70 to-transparent dark:from-secondary-dark/40 ${
+          view === "list"
+            ? "w-full sm:w-64 md:w-72 lg:w-80 flex-shrink-0 aspect-[16/9] sm:rounded-l-2xl rounded-t-2xl"
+            : "aspect-[16/9] w-full"
         }`}
       >
         {project.image ? (
           <img
             src={project.image}
             alt={project.title}
-            className="h-full w-full object-cover"
+            className={`h-full w-full ${
+              view === "list"
+                ? "object-contain sm:rounded-l-2xl rounded-t-2xl"
+                : "object-cover"
+            }`}
           />
         ) : (
-          <div className="absolute inset-0 grid place-items-center text-text2 dark:text-text1-dark/60 text-sm">
+          <div
+            className={`absolute inset-0 grid place-items-center text-text2 dark:text-text1-dark/60 text-sm ${
+              view === "list" ? "sm:rounded-l-2xl rounded-t-2xl" : ""
+            }`}
+          >
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-2 rounded-lg bg-primary-light/20 dark:bg-primary-dark/20 flex items-center justify-center">
                 <span className="text-2xl font-bold text-primary-light dark:text-primary-dark">
@@ -72,12 +82,14 @@ const ProjectCard = ({ project, view = "grid" }) => {
 
       {/* Content */}
       <div
-        className={`p-6 flex flex-col ${view === "list" ? "flex-1" : "flex-1"}`}
+        className={`p-4 sm:p-6 flex flex-col ${
+          view === "list" ? "flex-1 min-w-0" : "flex-1"
+        }`}
       >
-        <h3 className="text-xl font-bold text-text1-light dark:text-text1-dark mb-2">
+        <h3 className="text-lg sm:text-xl font-bold text-text1-light dark:text-text1-dark mb-2">
           {project.title}
         </h3>
-        <p className="text-text2 dark:text-text1-dark/80 mb-4 line-clamp-3 flex-1">
+        <p className="text-sm sm:text-base text-text2 dark:text-text1-dark/80 mb-4 line-clamp-3 flex-1">
           {project.description}
         </p>
 
@@ -108,48 +120,51 @@ const ProjectCard = ({ project, view = "grid" }) => {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
           <Button
             asChild
-            className="flex-1 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 h-10"
+            className="flex-1 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 h-9 sm:h-10"
           >
             <a
               href={project.detailsUrl}
-              className="inline-flex items-center gap-2"
+              className="inline-flex items-center justify-center gap-2"
             >
-              View Details <ArrowRight className="h-4 w-4" />
+              <span className="text-sm sm:text-base">View Details</span>{" "}
+              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
             </a>
           </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="icon"
-            className="h-10 w-10 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
-          >
-            <a
-              href={project.codeUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View Code"
+          <div className="flex gap-2 sm:gap-3">
+            <Button
+              asChild
+              variant="outline"
+              size="icon"
+              className="h-9 w-9 sm:h-10 sm:w-10 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
             >
-              <Github className="h-4 w-4" />
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="icon"
-            className="h-10 w-10 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
-          >
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View Demo"
+              <a
+                href={project.codeUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View Code"
+              >
+                <Github className="h-3 w-3 sm:h-4 sm:w-4" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="icon"
+              className="h-9 w-9 sm:h-10 sm:w-10 border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
             >
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </Button>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View Demo"
+              >
+                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
@@ -160,6 +175,18 @@ const ProjectsPageSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
@@ -192,12 +219,12 @@ const ProjectsPageSection = () => {
       </div>
 
       {/* Header */}
-      <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-10">
+      <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-text1-light dark:text-text1-dark mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-text1-light dark:text-text1-dark mb-4 sm:mb-6">
             All Projects
           </h1>
-          <p className="text-lg text-text2 dark:text-text1-dark/80 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-text2 dark:text-text1-dark/80 max-w-3xl mx-auto">
             Explore my engineering work across full-stack systems, backend
             architectures, and mobile experiences — designed with scalability
             and impact in mind.
@@ -205,23 +232,28 @@ const ProjectsPageSection = () => {
         </div>
 
         {/* Search and Filters */}
-        <div className="mt-12 flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="mt-8 sm:mt-12 space-y-6">
           {/* Search */}
-          <div className="relative w-full lg:w-96">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-text2 dark:text-text1-dark/70" />
+          <div className="relative w-full max-w-md mx-auto lg:mx-0">
+            <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-text2 dark:text-text1-dark/70" />
             <input
               type="text"
-              placeholder="Search projects by title, description, or tech..."
+              placeholder="Search projects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 text-text1-light dark:text-text1-dark placeholder-text2 dark:placeholder-text1-dark/60 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-colors"
+              className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 rounded-xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 text-text1-light dark:text-text1-dark placeholder-text2 dark:placeholder-text1-dark/60 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-colors text-sm sm:text-base"
             />
           </div>
 
           {/* Category Filters */}
-          <div className="flex items-center gap-3">
-            <Filter className="h-5 w-5 text-text2 dark:text-text1-dark/70" />
-            <div className="flex gap-2">
+          <div className="w-full">
+            <div className="flex items-center gap-2 mb-4">
+              <Filter className="h-4 w-4 sm:h-5 sm:w-5 text-text2 dark:text-text1-dark/70" />
+              <span className="text-sm font-medium text-text1-light dark:text-text1-dark">
+                Filter by Category
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start">
               {categories.map((category) => (
                 <Button
                   key={category}
@@ -232,9 +264,9 @@ const ProjectsPageSection = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`${
                     selectedCategory === category
-                      ? "bg-primary-light dark:bg-primary-dark text-white"
-                      : "border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70"
-                  } rounded-full px-4 py-2 transition-colors`}
+                      ? "bg-primary-light dark:bg-primary-dark text-white shadow-md"
+                      : "border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light/70 dark:hover:bg-secondary-dark/70 hover:border-primary-light/50 dark:hover:border-primary-dark/50"
+                  } rounded-full px-4 py-2 transition-all duration-200 text-sm font-medium whitespace-nowrap hover:scale-105 active:scale-95`}
                 >
                   {category}
                 </Button>
@@ -244,13 +276,13 @@ const ProjectsPageSection = () => {
         </div>
 
         {/* Results Count */}
-        <div className="mt-8 flex items-center justify-between">
-          <p className="text-text2 dark:text-text1-dark/80">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-sm sm:text-base text-text2 dark:text-text1-dark/80">
             Showing {filteredProjects.length} of {projects.length} projects
           </p>
 
-          {/* View Toggle */}
-          <div className="flex items-center gap-2">
+          {/* View Toggle - Hidden on small devices */}
+          <div className="hidden sm:flex items-center gap-2">
             <Button
               variant={viewMode === "grid" ? "default" : "outline"}
               size="icon"
@@ -289,14 +321,18 @@ const ProjectsPageSection = () => {
 
         {/* Projects Grid/List */}
         <div
-          className={`mt-8 ${
+          className={`mt-6 sm:mt-8 ${
             viewMode === "grid"
-              ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-              : "space-y-6"
+              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+              : "space-y-4 sm:space-y-6"
           }`}
         >
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} view={viewMode} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              view={isMobile ? "grid" : viewMode}
+            />
           ))}
         </div>
 

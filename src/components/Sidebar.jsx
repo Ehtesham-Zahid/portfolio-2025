@@ -1,6 +1,14 @@
 import React from "react";
 
 const Sidebar = ({ open, onClose }) => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    onClose(); // Close sidebar after clicking
+  };
+
   return (
     <div
       className={`fixed inset-0 z-50 transition-opacity ${
@@ -55,17 +63,16 @@ const Sidebar = ({ open, onClose }) => {
         <nav className="px-3 py-4">
           <ul className="space-y-1">
             {[
-              { href: "#about", label: "About" },
-              { href: "#skills", label: "Skills" },
-              { href: "#projects", label: "Projects" },
-              { href: "#blogs", label: "Blogs" },
-              { href: "#contact", label: "Contact" },
+              { id: "about", label: "About" },
+              { id: "skills", label: "Skills" },
+              { id: "projects", label: "Projects" },
+              { id: "blogs", label: "Blogs" },
+              { id: "contact", label: "Contact" },
             ].map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={onClose}
-                  className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-text1 dark:text-text1-dark hover:text-primary dark:hover:text-primary-dark hover:bg-secondary/70 dark:hover:bg-secondary-dark/60 transition-colors"
+              <li key={link.id}>
+                <button
+                  onClick={() => scrollToSection(link.id)}
+                  className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-text1 dark:text-text1-dark hover:text-primary dark:hover:text-primary-dark hover:bg-secondary/70 dark:hover:bg-secondary-dark/60 transition-colors w-full text-left"
                 >
                   {link.label}
                   <svg
@@ -82,7 +89,7 @@ const Sidebar = ({ open, onClose }) => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </a>
+                </button>
               </li>
             ))}
           </ul>

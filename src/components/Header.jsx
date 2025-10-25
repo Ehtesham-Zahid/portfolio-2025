@@ -20,6 +20,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <header ref={headerRef} className="w-full   ">
       <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -41,30 +48,30 @@ const Header = () => {
             }`}
           >
             <div className="flex items-center gap-1 bg-secondary-light dark:bg-secondary-dark  rounded-full px-3 py-1.5 shadow-sm">
-              <a
-                href="#about"
+              <button
+                onClick={() => scrollToSection("about")}
                 className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
               >
                 About
-              </a>
-              <a
-                href="#skills"
+              </button>
+              <button
+                onClick={() => scrollToSection("skills")}
                 className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
               >
                 Skills
-              </a>
-              <a
-                href="#projects"
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
                 className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
               >
                 Projects
-              </a>
-              <a
-                href="#contact"
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
                 className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
               >
                 Contact
-              </a>
+              </button>
             </div>
           </nav>
 
@@ -110,30 +117,30 @@ const Header = () => {
           <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8 py-2">
             <div className="flex justify-center">
               <div className="flex items-center gap-1 rounded-full px-3 py-1.5 shadow-sm  bg-secondary-light dark:bg-secondary-dark">
-                <a
-                  href="#about"
+                <button
+                  onClick={() => scrollToSection("about")}
                   className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
                 >
                   About
-                </a>
-                <a
-                  href="#skills"
+                </button>
+                <button
+                  onClick={() => scrollToSection("skills")}
                   className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
                 >
                   Skills
-                </a>
-                <a
-                  href="#projects"
+                </button>
+                <button
+                  onClick={() => scrollToSection("projects")}
                   className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
                 >
                   Projects
-                </a>
-                <a
-                  href="#contact"
+                </button>
+                <button
+                  onClick={() => scrollToSection("contact")}
                   className="px-3 py-1.5 text-sm font-medium rounded-full text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
                 >
                   Contact
-                </a>
+                </button>
               </div>
             </div>
           </div>
