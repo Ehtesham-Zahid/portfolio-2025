@@ -13,7 +13,7 @@ export const projects = [
     about:
       "SkillStack represents a comprehensive Learning Management System designed to revolutionize online education. Built with modern web technologies, this platform addresses the critical challenges faced by instructors in the digital learning space, particularly around content protection and monetization. The system integrates advanced video security through VdoCipher, ensuring that educational content remains protected from piracy while maintaining an excellent user experience for legitimate learners. With seamless Stripe payment integration and detailed enrollment analytics, instructors can focus on creating quality content while the platform handles the technical complexities of course delivery and student management.",
     image: skillstackImage, // Project screenshot
-    liveUrl: "https://skillstack-frontend-4.onrender.com/",
+    liveUrl: "https://skillstack-frontend-one.vercel.app/",
     codeUrl: "https://github.com/Ehtesham-Zahid/SkillStack",
     detailsUrl: "/projects/skillstack-lms",
     stats: "10+ Instructors",
@@ -100,7 +100,7 @@ export const projects = [
     ],
     videoData: {
       thumbnail: skillstackImage,
-      youtubeUrl: "https://youtu.be/PC2D0_RNu4k",
+      youtubeUrl: "https://www.youtube.com/watch?v=HcY1_XlG02s",
     },
   },
   {
