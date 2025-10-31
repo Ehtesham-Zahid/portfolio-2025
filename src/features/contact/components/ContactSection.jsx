@@ -8,7 +8,9 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Loader2,
 } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +19,7 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -25,9 +28,26 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formspree.io/f/xjkpazew", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        toast.success("Message sent!");
+      } else {
+        toast.error("Something went wrong.");
+      }
+    } catch (err) {
+      toast.error("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -182,10 +202,21 @@ const ContactSection = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 h-12 text-base font-medium"
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
+                className="w-full bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed h-12 text-base font-medium"
               >
-                <Send className="h-5 w-5 mr-2" />
-                Send Message
+                {isSubmitting ? (
+                  <span className="inline-flex items-center">
+                    <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                    Sending...
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center">
+                    <Send className="h-5 w-5 mr-2" />
+                    Send Message
+                  </span>
+                )}
               </Button>
             </form>
           </div>

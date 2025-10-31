@@ -41,11 +41,11 @@ const FeaturesSection = ({ project }) => {
               return (
                 <div
                   key={index}
-                  className="group relative rounded-2xl p-[1px] bg-gradient-to-tr from-primary/40 to-transparent dark:from-primary-dark/40 transition-transform duration-200 hover:-translate-y-1"
+                  className="group relative rounded-2xl p-[1px] bg-gradient-to-tr from-primary-light/40 to-transparent dark:from-primary-dark/40 transition-transform duration-200 hover:-translate-y-1"
                 >
                   <div className="rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 backdrop-blur-sm p-6 shadow-sm h-full">
                     {/* Icon */}
-                    <div className="h-12 w-12 rounded-xl grid place-items-center bg-primary/15 dark:bg-primary-dark/15 text-primary dark:text-primary-dark ring-1 ring-primary/25 dark:ring-primary-dark/25 transition-colors duration-200 group-hover:bg-primary/20 group-hover:dark:bg-primary-dark/20 mb-4">
+                    <div className="h-12 w-12 rounded-xl grid place-items-center bg-primary-light/15 dark:bg-primary-dark/15 text-primary-light dark:text-primary-dark ring-1 ring-primary-light/25 dark:ring-primary-dark/25 transition-colors duration-200 group-hover:bg-primary-light/20 group-hover:dark:bg-primary-dark/20 mb-4">
                       <IconComponent className="h-6 w-6" />
                     </div>
 
@@ -54,7 +54,7 @@ const FeaturesSection = ({ project }) => {
                       <h3 className="text-lg font-semibold text-text1-light dark:text-text1-dark mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-text2 dark:text-text1-dark/80 leading-relaxed">
+                      <p className="text-text2-light dark:text-text1-dark/80 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>

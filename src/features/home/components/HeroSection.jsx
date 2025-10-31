@@ -89,13 +89,13 @@ const HeroSection = () => {
 
           {/* Right: Simple Visual */}
           <div className="relative animate-fade-in-up [animation-delay:120ms] order-first lg:order-last">
-            <div className="relative mx-auto max-w-xs sm:max-w-sm lg:max-w-xs">
+            <div className="relative mx-auto max-w-full">
               {/* Simple profile image */}
               <div className="relative mb-6 sm:mb-8">
                 <img
                   src={profilePic}
                   alt="Ehtesham Zahid profile"
-                  className="w-full h-auto rounded-full border-2 border-primary-light/20 dark:border-primary-dark/20 shadow-lg"
+                  className="mx-auto w-72 sm:w-80 lg:w-96 h-auto rounded-full border-2 border-primary-light/20 dark:border-primary-dark/20 shadow-lg"
                   loading="eager"
                   width="300"
                   height="300"
@@ -103,39 +103,39 @@ const HeroSection = () => {
               </div>
 
               {/* Stats cards */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
-                <div className="text-center p-2 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl bg-primary-light/10 dark:bg-primary-dark/10 border border-primary-light/20 dark:border-primary-dark/20 shadow-md">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 sm:mb-3 rounded-lg bg-primary-light/15 dark:bg-primary-dark/15 flex items-center justify-center">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 items-stretch">
+                <div className="text-center p-3 sm:p-4 rounded-xl bg-primary-light/10 dark:bg-primary-dark/10 border border-primary-light/20 dark:border-primary-dark/20 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[150px] space-y-2">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-lg bg-primary-light/15 dark:bg-primary-dark/15 flex items-center justify-center">
                     <Briefcase className="h-4 w-4 sm:h-5 sm:w-5 text-primary-light dark:text-primary-dark" />
                   </div>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-text1-light dark:text-text1-dark">
-                    3+
+                  <div className="text-xl sm:text-2xl font-bold text-text1-light dark:text-text1-dark leading-none">
+                    1+
                   </div>
-                  <div className="text-xs sm:text-sm font-medium text-text1-light dark:text-text1-dark">
+                  <div className="text-[11px] sm:text-sm font-medium text-text2-light dark:text-text1-dark/80 whitespace-normal leading-snug px-1">
                     Years
                   </div>
                 </div>
 
-                <div className="text-center p-2 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl bg-secondary-light/10 dark:bg-secondary-dark/10 border border-secondary-light/20 dark:border-secondary-dark/20 shadow-md">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 sm:mb-3 rounded-lg bg-secondary-light/15 dark:bg-secondary-dark/15 flex items-center justify-center">
-                    <FolderGit2 className="h-4 w-4 sm:h-5 sm:w-5 text-secondary-light dark:text-secondary-dark" />
+                <div className="text-center p-3 sm:p-4 rounded-xl bg-secondary-light/25 dark:bg-secondary-dark/10 border border-secondary-light/30 dark:border-secondary-dark/20 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[150px] space-y-2">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-lg bg-secondary-light/40 dark:bg-secondary-dark/15 flex items-center justify-center">
+                    <FolderGit2 className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 dark:text-orange-400" />
                   </div>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-text1-light dark:text-text1-dark">
-                    25+
+                  <div className="text-xl sm:text-2xl font-bold text-text1-light dark:text-text1-dark leading-none">
+                    100+
                   </div>
-                  <div className="text-xs sm:text-sm font-medium text-text1-light dark:text-text1-dark">
-                    Projects
+                  <div className="text-[11px] sm:text-sm font-medium text-text1-light dark:text-text1-dark whitespace-normal leading-snug px-1">
+                    Leetcode Problems
                   </div>
                 </div>
 
-                <div className="text-center p-2 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl bg-accent-light/10 dark:bg-accent-dark/10 border border-accent-light/20 dark:border-accent-dark/20 shadow-md">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 sm:mb-3 rounded-lg bg-accent-light/15 dark:bg-accent-dark/15 flex items-center justify-center">
+                <div className="text-center p-3 sm:p-4 rounded-xl bg-accent-light/10 dark:bg-accent-dark/10 border border-accent-light/20 dark:border-accent-dark/20 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[150px] space-y-2">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-lg bg-accent-light/15 dark:bg-accent-dark/15 flex items-center justify-center">
                     <Users className="h-4 w-4 sm:h-5 sm:w-5 text-accent-light dark:text-accent-dark" />
                   </div>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-text1-light dark:text-text1-dark">
-                    10+
+                  <div className="text-xl sm:text-2xl font-bold text-text1-light dark:text-text1-dark leading-none">
+                    5+
                   </div>
-                  <div className="text-xs sm:text-sm font-medium text-text1-light dark:text-text1-dark">
+                  <div className="text-[11px] sm:text-sm font-medium text-text2-light dark:text-text1-dark/80 whitespace-normal leading-snug px-1">
                     Mentees
                   </div>
                 </div>

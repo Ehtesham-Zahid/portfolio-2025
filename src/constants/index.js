@@ -193,7 +193,7 @@ export const projects = [
     ],
     videoData: {
       thumbnail: swiftcartImage,
-      youtubeUrl: "https://youtu.be/PC2D0_RNu4k",
+      youtubeUrl: "https://www.youtube.com/watch?v=aCY-DYvhoXk",
     },
   },
 ];

@@ -22,7 +22,7 @@ const ChallengesSolutionsSection = ({ project }) => {
               return (
                 <div
                   key={index}
-                  className="group relative rounded-2xl p-[1px] bg-gradient-to-r from-primary/40 to-transparent dark:from-primary-dark/40 transition-transform duration-200 hover:-translate-y-0.5"
+                  className="group relative rounded-2xl p-[1px] bg-gradient-to-r from-primary-light/40 to-transparent dark:from-primary-dark/40 transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   <div className="rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 backdrop-blur-sm p-8 shadow-sm">
                     <div className="grid lg:grid-cols-2 gap-8">
@@ -36,7 +36,7 @@ const ChallengesSolutionsSection = ({ project }) => {
                             Challenge
                           </h3>
                         </div>
-                        <p className="text-text2 dark:text-text1-dark/80 leading-relaxed pl-13">
+                        <p className="text-text2-light dark:text-text1-dark/80 leading-relaxed pl-13">
                           {item.challenge}
                         </p>
                       </div>
@@ -51,7 +51,7 @@ const ChallengesSolutionsSection = ({ project }) => {
                             Solution
                           </h3>
                         </div>
-                        <p className="text-text2 dark:text-text1-dark/80 leading-relaxed pl-13">
+                        <p className="text-text2-light dark:text-text1-dark/80 leading-relaxed pl-13">
                           {item.solution}
                         </p>
                       </div>

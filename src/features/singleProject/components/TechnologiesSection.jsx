@@ -103,7 +103,7 @@ const TechnologiesSection = ({ project }) => {
                   key={index}
                   className="flex items-center gap-3 px-4 py-2 rounded-full bg-secondary-light/60 dark:bg-secondary-dark/40 border border-secondary-light dark:border-secondary-dark text-text1-light dark:text-text1-dark hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors duration-200"
                 >
-                  <div className="h-6 w-6 rounded-full bg-text1-light dark:bg-text1-dark flex items-center justify-center">
+                  <div className="h-6 w-6 rounded-full bg-secondary-light dark:bg-text1-dark flex items-center justify-center">
                     <TechIcon name={tech} />
                   </div>
                   <span className="text-sm font-medium">{tech}</span>
