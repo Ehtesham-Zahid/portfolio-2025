@@ -16,14 +16,37 @@ const HeroSection = () => {
     }
   };
 
-  const handleDownloadCV = () => {
-    // Create a temporary anchor element to trigger download
-    const link = document.createElement("a");
-    link.href = "/Ehtesham-Zahid-CV.pdf"; // Path to CV file in public directory
-    link.download = "Ehtesham-Zahid-CV.pdf"; // Name for the downloaded file
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownloadCV = async () => {
+    try {
+      // Fetch the PDF file as a blob to ensure we get the actual file, not HTML
+      const response = await fetch("/Ehtesham-Zahid-CV.pdf");
+      if (!response.ok) {
+        throw new Error("Failed to fetch CV");
+      }
+      const blob = await response.blob();
+
+      // Create a blob URL and trigger download
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = "Ehtesham-Zahid-CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+
+      // Cleanup
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Error downloading CV:", error);
+      // Fallback to direct link if fetch fails
+      const link = document.createElement("a");
+      link.href = "/Ehtesham-Zahid-CV.pdf";
+      link.download = "Ehtesham-Zahid-CV.pdf";
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (

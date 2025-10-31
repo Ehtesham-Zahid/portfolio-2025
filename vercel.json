@@ -9,7 +9,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*)\\.(css|js|map|json|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|txt)$",
+      "src": "/(.*)\\.(css|js|map|json|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|txt|pdf)$",
       "dest": "/$1.$2"
     },
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
