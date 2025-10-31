@@ -16,6 +16,16 @@ const HeroSection = () => {
     }
   };
 
+  const handleDownloadCV = () => {
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement("a");
+    link.href = "/Ehtesham-Zahid-CV.pdf"; // Path to CV file in public directory
+    link.download = "Ehtesham-Zahid-CV.pdf"; // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="w-full bg-background-light dark:bg-background-dark">
       <div className="w-11/12 2xl:w-5/6 mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16 min-h-[calc(100vh-4rem)] flex items-center">
@@ -72,6 +82,7 @@ const HeroSection = () => {
                 Contact Me
               </Button>
               <Button
+                onClick={handleDownloadCV}
                 variant="ghost"
                 className="text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
               >
