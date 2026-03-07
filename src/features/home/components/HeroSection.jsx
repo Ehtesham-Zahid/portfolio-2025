@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/shadcn-components/ui/button";
 import { Briefcase, FolderGit2, Users } from "lucide-react";
-import profilePic from "@/assets/images/profile-pic-3.png";
+import profilePic from "@/assets/images/logo-1.png";
 import StatChip from "./StatChip";
 import { Link } from "react-router";
 
