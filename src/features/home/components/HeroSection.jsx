@@ -19,7 +19,7 @@ const HeroSection = () => {
   const handleDownloadCV = async () => {
     try {
       // Fetch the PDF file as a blob to ensure we get the actual file, not HTML
-      const response = await fetch("/Ehtesham-Zahid-CV-.pdf");
+      const response = await fetch("/Ehtesham-Zahid-CV---.pdf");
       if (!response.ok) {
         throw new Error("Failed to fetch CV");
       }
@@ -29,7 +29,7 @@ const HeroSection = () => {
       const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = blobUrl;
-      link.download = "Ehtesham-Zahid-CV-.pdf";
+      link.download = "Ehtesham-Zahid-CV---.pdf";
       document.body.appendChild(link);
       link.click();
 
@@ -40,8 +40,8 @@ const HeroSection = () => {
       console.error("Error downloading CV:", error);
       // Fallback to direct link if fetch fails
       const link = document.createElement("a");
-      link.href = "/Ehtesham-Zahid-CV-.pdf";
-      link.download = "Ehtesham-Zahid-CV-.pdf";
+      link.href = "/Ehtesham-Zahid-CV---.pdf";
+      link.download = "Ehtesham-Zahid-CV---.pdf";
       link.target = "_blank";
       document.body.appendChild(link);
       link.click();
