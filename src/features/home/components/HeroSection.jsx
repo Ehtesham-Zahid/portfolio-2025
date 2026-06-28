@@ -152,7 +152,7 @@ const HeroSection = () => {
 
                 <div className="text-center p-3 sm:p-4 rounded-xl bg-secondary-light/25 dark:bg-secondary-dark/10 border border-secondary-light/30 dark:border-secondary-dark/20 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[150px] space-y-2">
                   <div className="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-lg bg-secondary-light/40 dark:bg-secondary-dark/15 flex items-center justify-center">
-                    <FolderGit2 className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 dark:text-orange-400" />
+                    <FolderGit2 className="h-4 w-4 sm:h-5 sm:w-5 text-primary-light dark:text-primary-dark" />
                   </div>
                   <div className="text-xl sm:text-2xl font-bold text-text1-light dark:text-text1-dark leading-none">
                     100+
