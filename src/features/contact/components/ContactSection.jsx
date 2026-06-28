@@ -40,6 +40,12 @@ const ContactSection = () => {
       });
       if (response.ok) {
         toast.success("Message sent!");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
       } else {
         toast.error("Something went wrong.");
       }
