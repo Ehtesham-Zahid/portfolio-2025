@@ -30,11 +30,11 @@ const ProjectPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background dark:bg-background-dark">
       <IntroSection project={project} />
+      <DemoVideoSection project={project} />
       <AboutSection project={project} />
       <TechnologiesSection project={project} />
       <FeaturesSection project={project} />
       <ChallengesSolutionsSection project={project} />
-      <DemoVideoSection project={project} />
     </div>
   );
 };

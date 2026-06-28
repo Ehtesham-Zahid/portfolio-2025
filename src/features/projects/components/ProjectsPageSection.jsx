@@ -36,9 +36,9 @@ const ProjectCard = ({ project, view = "grid" }) => {
     >
       {/* Cover Image */}
       <div
-        className={`relative bg-gradient-to-br from-secondary-light/70 to-transparent dark:from-secondary-dark/40 ${
+        className={`relative overflow-hidden bg-gradient-to-br from-secondary-light/70 to-transparent dark:from-secondary-dark/40 ${
           view === "list"
-            ? "w-full sm:w-64 md:w-72 lg:w-80 flex-shrink-0 aspect-[16/9] sm:rounded-l-2xl rounded-t-2xl"
+            ? "w-full sm:w-64 md:w-72 lg:w-80 flex-shrink-0 aspect-[16/9]"
             : "aspect-[16/9] w-full"
         }`}
       >
@@ -46,11 +46,7 @@ const ProjectCard = ({ project, view = "grid" }) => {
           <img
             src={project.image}
             alt={project.title}
-            className={`h-full w-full ${
-              view === "list"
-                ? "object-contain sm:rounded-l-2xl rounded-t-2xl"
-                : "object-cover"
-            }`}
+            className="absolute inset-0 h-full w-full object-cover"
           />
         ) : (
           <div
@@ -68,16 +64,6 @@ const ProjectCard = ({ project, view = "grid" }) => {
             </div>
           </div>
         )}
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4">
-          <Badge tone="accent">{project.category}</Badge>
-        </div>
-        {/* Status Badge */}
-        <div className="absolute top-4 right-4">
-          <span className="px-2 py-1 text-xs font-medium bg-primary-light dark:bg-primary-dark text-white rounded-full">
-            {project.status}
-          </span>
-        </div>
       </div>
 
       {/* Content */}
@@ -86,9 +72,17 @@ const ProjectCard = ({ project, view = "grid" }) => {
           view === "list" ? "flex-1 min-w-0" : "flex-1"
         }`}
       >
-        <h3 className="text-lg sm:text-xl font-bold text-text1-light dark:text-text1-dark mb-2">
-          {project.title}
-        </h3>
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <h3 className="text-lg sm:text-xl font-bold text-text1-light dark:text-text1-dark">
+            {project.title}
+          </h3>
+          <div className="flex items-center gap-2 shrink-0 mt-0.5">
+            <Badge tone="accent">{project.category}</Badge>
+            <span className="px-2 py-0.5 text-[10px] font-semibold bg-primary-light/10 dark:bg-primary-dark/25 text-primary-light dark:text-primary-dark rounded-full border border-primary-light/20">
+              {project.status}
+            </span>
+          </div>
+        </div>
         <p className="text-sm sm:text-base text-text2 dark:text-text1-dark/80 mb-4 line-clamp-3 flex-1">
           {project.description}
         </p>

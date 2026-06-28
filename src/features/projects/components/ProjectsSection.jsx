@@ -20,9 +20,9 @@ const ProjectCard = ({
   return (
     <div className="group h-full flex flex-col rounded-2xl border border-secondary-light dark:border-secondary-dark bg-background/70 dark:bg-background-dark/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden hover:-translate-y-0.5">
       {/* Cover */}
-      <div className="relative aspect-[16/9] w-full bg-gradient-to-br from-secondary-light/70 to-transparent dark:from-secondary-dark/40">
+      <div className="relative overflow-hidden aspect-[16/9] w-full bg-gradient-to-br from-secondary-light/70 to-transparent dark:from-secondary-dark/40">
         {image ? (
-          <img src={image} alt={title} className="h-full w-full object-cover" />
+          <img src={image} alt={title} className="absolute inset-0 h-full w-full object-cover" />
         ) : (
           <div className="absolute inset-0 grid place-items-center text-text2 dark:text-text1-dark/60 text-sm">
             Cover coming soon

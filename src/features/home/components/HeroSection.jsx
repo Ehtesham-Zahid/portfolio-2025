@@ -106,7 +106,7 @@ const HeroSection = () => {
               <Button
                 onClick={handleDownloadCV}
                 variant="ghost"
-                className="text-text1-light dark:text-text1-dark hover:text-primary-light dark:hover:text-primary-dark px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
+                className="text-text1-light dark:text-text1-dark px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base w-full sm:w-auto transition-all duration-300"
               >
                 Download CV
               </Button>
