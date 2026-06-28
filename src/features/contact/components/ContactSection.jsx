@@ -288,12 +288,12 @@ const ContactSection = () => {
               <div className="flex items-center gap-3 mb-2">
                 <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-sm font-medium text-text1-light dark:text-text1-dark">
-                  Available for work
+                  Actively seeking opportunities
                 </span>
               </div>
               <p className="text-sm text-text2 dark:text-text1-dark/80">
-                I'm currently accepting new projects and collaborations. Let's
-                build something amazing together!
+                I'm currently seeking new full-time software engineering roles.
+                Let's connect and build something amazing!
               </p>
             </div>
           </div>

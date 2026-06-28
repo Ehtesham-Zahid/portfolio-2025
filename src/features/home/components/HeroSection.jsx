@@ -116,7 +116,7 @@ const HeroSection = () => {
             <div className="mt-6 sm:mt-8 lg:mt-10 flex items-center gap-3 sm:gap-4">
               <div className="h-2 w-2 rounded-full bg-primary-light dark:bg-primary-dark flex-shrink-0" />
               <p className="text-xs sm:text-sm text-text2-light dark:text-text1-dark/70">
-                Available for freelance projects and collaborations
+                Open to full-time job opportunities
               </p>
             </div>
           </div>
