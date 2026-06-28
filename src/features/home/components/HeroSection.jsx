@@ -66,9 +66,8 @@ const HeroSection = () => {
               </span>
             </h1>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-text2-light dark:text-text1-dark/80 max-w-2xl">
-              A Full Stack Developer specializing in MERN stack and Next.js,
-              crafting end-to-end solutions from database design to user
-              interfaces.
+              Full-stack engineer with 1+ year of turning complex requirements
+              into production systems that scale.
             </p>
 
             {/* Tech chips */}
