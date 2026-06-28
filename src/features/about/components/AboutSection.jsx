@@ -86,7 +86,7 @@ const AboutSection = () => {
                 <li className="relative pl-6">
                   <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary-light dark:bg-primary-dark" />
                   <p className="text-sm text-text1-light dark:text-text1-dark">
-                    2023–Now — Full Stack Developer, building MERN & Next.js
+                    2024–Now — Full Stack Developer, building MERN & Next.js
                     apps
                   </p>
                   <p className="text-xs text-text2-light dark:text-text1-dark/70">
@@ -96,7 +96,7 @@ const AboutSection = () => {
                 <li className="relative pl-6">
                   <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary-light dark:bg-primary-dark" />
                   <p className="text-sm text-text1-light dark:text-text1-dark">
-                    2021–2023 — Freelance & mentoring
+                    2022–2024 — Freelance & mentoring
                   </p>
                   <p className="text-xs text-text2-light dark:text-text1-dark/70">
                     Shipped full-stack applications and guided learners into
