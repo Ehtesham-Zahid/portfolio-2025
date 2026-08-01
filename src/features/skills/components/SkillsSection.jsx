@@ -9,6 +9,7 @@ const CATEGORIES = [
   "Backend",
   "Database",
   "Language",
+  "DevOps",
   "Tools",
 ];
 
@@ -17,32 +18,33 @@ const SKILLS = [
   { name: "HTML", category: "Frontend" },
   { name: "CSS", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
-  { name: "ShadCN", category: "Frontend" },
   { name: "React", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
   { name: "Redux", category: "Frontend" },
-  { name: "RTK Query", category: "Frontend" },
-  { name: "Material-UI", category: "Frontend" },
 
   // Backend
   { name: "Node.js", category: "Backend" },
   { name: "Express.js", category: "Backend" },
   { name: "REST APIs", category: "Backend" },
   { name: "Socket.io", category: "Backend" },
-  { name: "JWT", category: "Backend" },
-  { name: "Bcrypt", category: "Backend" },
-  { name: "Multer", category: "Backend" },
 
   // Database
   { name: "MongoDB", category: "Database" },
-  { name: "Mongoose", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+  { name: "Prisma", category: "Database" },
   { name: "Redis", category: "Database" },
 
   // Languages
-  { name: "TypeScript", category: "Language" },
   { name: "JavaScript", category: "Language" },
+  { name: "TypeScript", category: "Language" },
 
-  // Tools & DevOps
+  // DevOps
+  { name: "Docker", category: "DevOps" },
+  { name: "Nginx", category: "DevOps" },
+  { name: "GitHub Actions", category: "DevOps" },
+  { name: "AWS", category: "DevOps" },
+
+  // Tools
   { name: "Git", category: "Tools" },
   { name: "Postman", category: "Tools" },
   { name: "Vercel", category: "Tools" },

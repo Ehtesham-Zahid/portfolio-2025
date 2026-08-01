@@ -25,6 +25,18 @@ import shadcnIcon from "@/assets/icons/skills/shadcn.png";
 import jwtIcon from "@/assets/icons/skills/jwt.png";
 import multerIcon from "@/assets/icons/skills/multer.svg";
 import bcryptIcon from "@/assets/icons/skills/bcrypt.svg";
+import postgresqlIcon from "@/assets/icons/skills/postgresql.svg";
+import prismaIcon from "@/assets/icons/skills/prisma.svg";
+import firestoreIcon from "@/assets/icons/skills/firestore.svg";
+import dockerIcon from "@/assets/icons/skills/docker.svg";
+import nginxIcon from "@/assets/icons/skills/nginx.svg";
+import githubActionsIcon from "@/assets/icons/skills/githubactions.svg";
+import linuxIcon from "@/assets/icons/skills/linux.svg";
+import awsIcon from "@/assets/icons/skills/aws.svg";
+import railwayIcon from "@/assets/icons/skills/railway.svg";
+import renderIcon from "@/assets/icons/skills/render.svg";
+import firebaseIcon from "@/assets/icons/skills/firebase.svg";
+import appwriteIcon from "@/assets/icons/skills/appwrite.svg";
 
 // Map skill names to local SVG imports
 const iconMap = {
@@ -52,6 +64,18 @@ const iconMap = {
   JWT: jwtIcon,
   Multer: multerIcon,
   Bcrypt: bcryptIcon,
+  PostgreSQL: postgresqlIcon,
+  Prisma: prismaIcon,
+  Firestore: firestoreIcon,
+  Docker: dockerIcon,
+  Nginx: nginxIcon,
+  "GitHub Actions": githubActionsIcon,
+  Linux: linuxIcon,
+  AWS: awsIcon,
+  Railway: railwayIcon,
+  Render: renderIcon,
+  Firebase: firebaseIcon,
+  Appwrite: appwriteIcon,
 };
 
 const SkillIcon = ({ name }) => {

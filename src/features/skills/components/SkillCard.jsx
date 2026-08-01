@@ -6,6 +6,8 @@ const categoryStyles = {
   Backend: "text-indigo-600 border-indigo-200/60 bg-indigo-50/30 dark:text-indigo-400 dark:border-indigo-900/30 dark:bg-indigo-950/20",
   Database: "text-emerald-600 border-emerald-200/60 bg-emerald-50/30 dark:text-emerald-400 dark:border-emerald-900/30 dark:bg-emerald-950/20",
   Language: "text-amber-600 border-amber-200/60 bg-amber-50/30 dark:text-amber-400 dark:border-amber-900/30 dark:bg-amber-950/20",
+  DevOps: "text-purple-600 border-purple-200/60 bg-purple-50/30 dark:text-purple-400 dark:border-purple-900/30 dark:bg-purple-950/20",
+  Cloud: "text-sky-600 border-sky-200/60 bg-sky-50/30 dark:text-sky-400 dark:border-sky-900/30 dark:bg-sky-950/20",
   Tools: "text-rose-600 border-rose-200/60 bg-rose-50/30 dark:text-rose-400 dark:border-rose-900/30 dark:bg-rose-950/20",
 };
 
